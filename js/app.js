@@ -2,12 +2,13 @@ import {ROOMS,ITEMS,ICONS,HOTSPOT_COUNT,FRAGMENTS} from './content.js';
 import {initialState,restore,dispatch,objects,unlocked,dialog,objective} from './engine.js';
 import {drawScene,drawTitle,drawEnding} from './art.js';
 const $=id=>document.getElementById(id),SAVE_KEY='caschy-adventure-404-v1';
-let state=initialState(),log=[],verb='look',selected=null,title=true,sound=false,audio=null,storageOK=true;
+let state=initialState(),log=[],verb='look',selected=null,title=true,sound=false,audio=null,storageOK=true,dialogueOrigin=null;
 try{const raw=localStorage.getItem(SAVE_KEY);if(raw){const data=JSON.parse(raw),saved=restore(data.state);if(saved){state=saved;log=Array.isArray(data.log)?data.log.filter(x=>typeof x==='string').slice(0,35):[];}else{$('save-status').textContent='Alter Speicherstand nicht lesbar. Neues Spiel bereit.';storageOK=false;}}}catch{storageOK=false;$('save-status').textContent='Lokaler Speicher nicht verfügbar.';}
 function el(tag,attrs={},text=''){const n=document.createElement(tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,v);if(text)n.textContent=text;return n;}
 function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify({state,log}));storageOK=true;$('save-status').classList.remove('error');$('save-status').textContent='✓ Lokal gespeichert';}catch{storageOK=false;$('save-status').classList.add('error');$('save-status').textContent='Speichern nicht möglich – Tab offen lassen';}}
 function sfx(success=false){if(!sound||!audio)return;try{const o=audio.createOscillator(),g=audio.createGain();o.type='square';o.frequency.setValueAtTime(success?523:220,audio.currentTime);if(success)o.frequency.setValueAtTime(784,audio.currentTime+.09);g.gain.setValueAtTime(.025,audio.currentTime);g.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.18);o.connect(g);g.connect(audio.destination);o.start();o.stop(audio.currentTime+.2);}catch{/* Audio is optional. */}}
-function run(event){const previousPending=state.pending;const result=dispatch(state,event);state=result.state;if(result.message){log.unshift(result.message);log=log.slice(0,35);}if(selected&&!state.inventory.includes(selected))selected=null;save();render(result.tone);sfx(result.tone==='success');
+function run(event){const previousPending=state.pending,origin=document.activeElement?.getAttribute('data-focus');const result=dispatch(state,event);if(!previousPending&&result.state.pending)dialogueOrigin=origin;state=result.state;if(result.message){log.unshift(result.message);log=log.slice(0,35);}if(selected&&!state.inventory.includes(selected))selected=null;save();render(result.tone);sfx(result.tone==='success');
+ if(previousPending&&!state.pending){(document.querySelector(`[data-focus="${CSS.escape(dialogueOrigin||'verb-'+verb)}"]`)||document.querySelector(`[data-verb="${verb}"]`))?.focus({preventScroll:true});}
  if(state.pending&&state.pending!==previousPending){const target=$('dialogue').querySelector('input,button');target?.focus({preventScroll:true});if(matchMedia('(max-width:760px)').matches)$('dialogue').scrollIntoView({block:'start',behavior:'instant'});}
 }
 function target(id){run({type:'act',target:id,verb,item:selected});}
@@ -30,10 +31,10 @@ function render(tone='normal'){
  state.inventory.forEach(id=>{const b=el('button',{class:'item','data-item':id,'data-focus':'item-'+id,'aria-label':ITEMS[id],'aria-pressed':String(selected===id)});b.append(el('span',{class:'icon','aria-hidden':'true'},ICONS[id]||'▧'),el('span',{},ITEMS[id]));b.addEventListener('click',()=>{if(selected&&selected!==id){run({type:'combine',a:selected,b:id});selected=null;render();}else{selected=selected===id?null:id;if(selected)verb='use';render();}});$('inventory').append(b);});
  const [,goal]=objective(state);$('objective').textContent=goal;$('progress').textContent=`${FRAGMENTS.filter(f=>state.flags[f]||state.slots.includes(f)||(f==='compass'&&state.flags.found)).length}/4 ◇`;
  $('discoveries').textContent=`${state.seen.length} / ${HOTSPOT_COUNT} Entdeckungen`;
- $('message').textContent=log[0]||'Wähle eine Aktion und ein Ziel.';$('message').className=tone;
+ $('message').textContent=log[0]||'Wähle eine Aktion und ein Ziel.';$('message').className=tone;$('message').hidden=!!state.pending&&log[0]===dialog(state)?.text;
  $('log').replaceChildren(...log.slice(1).map(t=>el('li',{},t)));
  renderDialogue();updateCommand();
- if(focusId){const next=document.querySelector(`[data-focus="${CSS.escape(focusId)}"]`);next?.focus({preventScroll:true});}
+ if(focusId){const next=document.querySelector(`[data-focus="${CSS.escape(focusId)}"]`);(next||(state.pending?$('dialogue').querySelector('input,button'):null))?.focus({preventScroll:true});}
  if(!storageOK){$('save-status').classList.add('error');}
 }
 function renderDialogue(){
