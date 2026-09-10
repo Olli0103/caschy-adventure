@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="theme-color" content="#142b38"><meta name="description" content="Caschy und das Geheimnis der 404 – ein lokales Pixel-Point-and-Click-Adventure über ein unabhängiges Blog.">
+ <title>Caschy und das Geheimnis der 404</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <a class="skip" href="#actions">Zur Bedienung</a>
+ <header class="masthead"><a class="brand" href="#" id="home" aria-label="Titelansicht öffnen"><span class="brand-pixel">C:</span><span>CASCHY <small>UND DAS GEHEIMNIS DER 404</small></span></a><div class="header-actions"><span id="save-status" role="status">Lokal. Ohne Cloud.</span><button id="sound" aria-pressed="false">Ton: aus</button><button id="restart">Neustart</button></div></header>
+ <main>
+  <section id="title-screen" aria-labelledby="game-title">
+   <div class="title-art"><canvas id="title-canvas" role="img" aria-label="Pixelredaktion: Caschy, André und Benny vor einem großen 404-Bildschirm"></canvas></div>
+   <div class="title-copy"><span class="eyebrow">FREITAG, 17:55 UHR</span><h1 id="game-title">Caschy und das<br><em>Geheimnis der 404</em></h1><p class="lead">Der Artikel ist weg.<br>Der Veröffentlichen-Knopf auch.<br>Und irgendwer riecht nach Clickbait.</p><p>Hol mit Olli, André, Benny und Felix vier Fragmente der Bloggeschichte zurück – bevor der Algorithmus den Feierabend monetarisiert.</p><button id="start" class="primary">Fehler suchen →</button><button id="resume" hidden>Spiel fortsetzen</button><p class="duration">7 Räume · etwa 20–35 Minuten · kein Zeitdruck</p></div>
+   <div class="intro-manual"><div><b>01 / AUSPROBIEREN</b><p>Aktion wählen, Objekt anklicken. Alle Ziele stehen zusätzlich als beschriftete Buttons unter dem Bild.</p></div><div><b>02 / KOMBINIEREN</b><p>Inventargegenstand wählen, dann ein Raumobjekt benutzen – oder einen zweiten Gegenstand kombinieren. Escape hebt die Auswahl auf.</p></div><div><b>03 / DRANBLEIBEN</b><p>Hinweise kommen in drei Stufen. Kein Tod, keine Sackgassen. Automatischer lokaler Speicherstand; Ton ist freiwillig.</p></div></div>
+  </section>
+  <section id="game" hidden aria-label="Adventure">
+   <nav id="map" class="map" aria-label="Räume"></nav>
+   <div class="game-grid">
+    <section class="scene-panel" aria-labelledby="room-name"><div class="room-heading"><div><span class="eyebrow" id="room-number"></span><h1 id="room-name"></h1><p id="room-subtitle"></p></div><span class="time-pill">17:55 <span>∞</span></span></div><div class="scene-wrap"><canvas id="scene" role="img"></canvas><div id="hotspots" aria-label="Objekte im Raumbild"></div></div><div class="command-line" id="command" aria-live="polite">Ansehen …</div><div id="object-list" class="object-list" aria-label="Alle erreichbaren Objekte"></div></section>
+    <section class="controls" id="actions" aria-label="Aktionen und Inventar"><div id="verbs" class="verbs" role="group" aria-label="Aktion wählen"><button data-verb="look" aria-pressed="true"><kbd>1</kbd> Ansehen</button><button data-verb="take" aria-pressed="false"><kbd>2</kbd> Nehmen</button><button data-verb="use" aria-pressed="false"><kbd>3</kbd> Benutzen</button><button data-verb="talk" aria-pressed="false"><kbd>4</kbd> Rede mit</button></div><div class="inventory-head"><h2>In der Tasche <span id="inventory-count">0</span></h2><button id="cancel-item" hidden>Auswahl aufheben</button></div><div id="inventory" aria-label="Inventar"></div><p class="control-note">Gegenstand → Raumziel · Gegenstand → Gegenstand · Tab / Enter bedienbar</p></section>
+    <aside class="journal" aria-label="Dialog und Notizbuch"><div class="journal-head"><span class="eyebrow">AUSGELAGERTES GEHIRN</span><span id="progress"></span></div><h2 id="objective"></h2><button id="hint">Hinweis · nächste Stufe</button><div class="journal-rule"></div><section id="dialogue" aria-label="Aktueller Dialog"></section><div id="message" role="status" aria-live="polite" aria-atomic="true"></div><details id="history"><summary>Bisheriges Gespräch</summary><ol id="log"></ol></details><div class="journal-footer"><span id="discoveries"></span><p>Keine Eile. Die Uhr wartet auf uns.</p></div></aside>
+   </div>
+  </section>
+  <section id="ending" hidden aria-labelledby="ending-title"><span class="eyebrow" id="ending-kicker"></span><h1 id="ending-title"></h1><canvas id="ending-canvas" role="img"></canvas><p id="ending-text"></p><div id="ending-actions"></div><p class="credits">Ein eigenständiges Fan-Adventure. Historische Anker sind belegt; Geschichte und Dialoge sind erfunden.<br><a href="README.md">Handbuch & Walkthrough</a> · <a href="SOURCES.md">Quellen & Einordnung</a></p></section>
+ </main>
+ <footer class="site-footer"><span>404 → 200 · EIN BLOG BEHÄLT SEINE STIMME</span><span>Nur lokal gespeichert. Keine Tracker. Kein Plan B.</span></footer>
+ <dialog id="restart-dialog"><h2>Von vorn anfangen?</h2><p>Das ersetzt ausschließlich den lokalen Speicherstand dieses Adventures. Dein bisheriger Fortschritt geht verloren.</p><div><button id="restart-cancel" autofocus>Weiterspielen</button><button id="restart-confirm" class="danger">Neues Spiel starten</button></div></dialog>
+ <noscript>Dieses lokale Adventure benötigt JavaScript. Es lädt keine externen Dienste.</noscript>
+ <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "caschy-geheimnis-404",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/state.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "check": "node --check js/content.js && node --check js/engine.js && node --check js/art.js && node --check js/app.js && node --check server.mjs && git diff --check"
+  }
+}
