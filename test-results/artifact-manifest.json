@@ -1,0 +1,151 @@
+{
+  "runtimeBuildSha256": "e28aa2e93e8156cd10a5154d5867e4822b6f328b9733af701a9dd21f2fcb9a9d",
+  "files": [
+    {
+      "path": "index.html",
+      "sha256": "1604dd8837607fdcdae7a31e8ded00f4f4ca73fbae4aa5b0383fa74a8b7f0184",
+      "bytes": 5497
+    },
+    {
+      "path": "style.css",
+      "sha256": "25e832734601c617f351179705e8603222952a7d9a46557d792ecd35bf490701",
+      "bytes": 11926
+    },
+    {
+      "path": "js/content.js",
+      "sha256": "0540aa58c9d69f408b3e317d4bb5b1d5ff5270ce45aadcf88fa256e17a821967",
+      "bytes": 11762
+    },
+    {
+      "path": "js/engine.js",
+      "sha256": "4bcfda457fe500065b0c865b1e6c7fec023d2482fda407601b034e9ad1704c37",
+      "bytes": 26245
+    },
+    {
+      "path": "js/art.js",
+      "sha256": "29d98962df98ee3afc4a0a31cd4ab50bbbac776703fce86c841ebcba03e35d9a",
+      "bytes": 13279
+    },
+    {
+      "path": "js/app.js",
+      "sha256": "003c9849f37a3333e15c91fa59fd92a0ee494a954b0dc49625a0a72c7e700f7f",
+      "bytes": 10999
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "12e08a0f7e2e8cef262f6c466c9ad2036ef1d5d662c6e579910beb7848bbedc4",
+      "bytes": 1297
+    },
+    {
+      "path": "test-results/01-title.png",
+      "sha256": "c77a0323881d46ae703d48d64ca849b825f55ca05a1a75c742f14680378493be",
+      "bytes": 326552
+    },
+    {
+      "path": "test-results/02-newsroom.png",
+      "sha256": "08a43ab754f0d2e2442c1dfcd4f360e15f345c6b1e91143068b413acd0c92c3b",
+      "bytes": 110597
+    },
+    {
+      "path": "test-results/room-archive.png",
+      "sha256": "974babc27747c66d3a1c04a4f49af8a48390bad819d675a897f333a3c329029c",
+      "bytes": 101327
+    },
+    {
+      "path": "test-results/16-archive-shelf-after-pickup.png",
+      "sha256": "7fca8929374138358d5763e492f26bfe451b16f074a72cfe37ee40516e4ea0aa",
+      "bytes": 100211
+    },
+    {
+      "path": "test-results/room-workshop.png",
+      "sha256": "771d3eb18ac2645ed1396d85ffdd7ff1bd2e3ccab90b09740779fc5b5ace45b3",
+      "bytes": 102543
+    },
+    {
+      "path": "test-results/03-andre-dialogue.png",
+      "sha256": "d75686b68c23a8360b50d0c12b76c906f1260ef6da0826ddd1620d67fa1bd2ca",
+      "bytes": 133183
+    },
+    {
+      "path": "test-results/04-inventory-hover.png",
+      "sha256": "f1a4acc92642ee5a2f4645e137a28d4c7afd867a65d9bdf4208678a8c269688b",
+      "bytes": 116255
+    },
+    {
+      "path": "test-results/05-workshop-cleared.png",
+      "sha256": "96354b2a4c6c382f17da7c1d548c45e0c0041c1dd4a2d647992806e2fae4a590",
+      "bytes": 116718
+    },
+    {
+      "path": "test-results/room-lab.png",
+      "sha256": "920281bbd1fa627605aa005f30b8077a9a0cc3aa35d0add9a233eeb98afdad97",
+      "bytes": 103920
+    },
+    {
+      "path": "test-results/17-sensor-unlocked.png",
+      "sha256": "e853236a721c8f50181b8fbdaa072efffaef6b79646f4241b3d2cbb27f3f8f95",
+      "bytes": 113937
+    },
+    {
+      "path": "test-results/06-lab-repaired.png",
+      "sha256": "e07ca9f8d6a2a62e05d85692320133f041f27fbfe75993ee547318bfa91bbaed",
+      "bytes": 118731
+    },
+    {
+      "path": "test-results/room-quay.png",
+      "sha256": "c9f80aa0708950d18cc08264523fbbc399ac5991d2d02c9df9322d5671817e11",
+      "bytes": 112999
+    },
+    {
+      "path": "test-results/room-server.png",
+      "sha256": "ac35f0f82d4ae9f9b269a1088be8a074c43df77b220f8b338b7a0779a3d38720",
+      "bytes": 108532
+    },
+    {
+      "path": "test-results/07-team-unlocked.png",
+      "sha256": "26bd2836ff35e433399b949c180bf681c66d5c8163b20a6a7ee2535a141cfc4b",
+      "bytes": 117750
+    },
+    {
+      "path": "test-results/08-core.png",
+      "sha256": "7526d7abb69ec884cae41117d04a0f97833b6cf23ca25540a8c2a448597819b4",
+      "bytes": 124123
+    },
+    {
+      "path": "test-results/09-finale-choice.png",
+      "sha256": "b2cacd49120192c8e8c8266f0e77f3c63b17e0d82bf2bc12ef46f7f7cae8bb70",
+      "bytes": 142573
+    },
+    {
+      "path": "test-results/10-affiliate-ending.png",
+      "sha256": "8477dc86ba5e130ac4863d29ec929e580b76828ee5b1db4d2f64ce23ba62a4c8",
+      "bytes": 73749
+    },
+    {
+      "path": "test-results/11-good-ending.png",
+      "sha256": "ef1fb052f3cb49c96f2c7e92ab0ce25879ed392b0d2f16a0ec177d701e6d27e9",
+      "bytes": 77872
+    },
+    {
+      "path": "test-results/12-mobile-title.png",
+      "sha256": "cd359b2093457bc74fecb7da4fa0fd26abd807ebc9dc30f53a25d88b7b5ae313",
+      "bytes": 82819
+    },
+    {
+      "path": "test-results/13-mobile-newsroom.png",
+      "sha256": "210e0161a482ddeff4816a0218636bf8ddd07aa88340655374a6e50ae6487f7c",
+      "bytes": 89632
+    },
+    {
+      "path": "test-results/14-mobile-dialogue.png",
+      "sha256": "d59ab6a6186531718620fc0b53d076e0caf016a73216b9fba101c77af211e720",
+      "bytes": 109072
+    },
+    {
+      "path": "test-results/15-mobile-ending.png",
+      "sha256": "236a47014c25b661ad7706590cdb110b6641c4a6f5526725a58581751eb047e9",
+      "bytes": 53068
+    }
+  ],
+  "visualInspection": "All 22 screenshots opened and visually inspected after final browser run on 2026-09-10; see VERIFICATION.md."
+}
