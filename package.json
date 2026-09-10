@@ -2,11 +2,19 @@
   "name": "caschy-geheimnis-404",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://olli0103.github.io/caschy-adventure/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Olli0103/caschy-adventure.git"
+  },
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
     "test": "node --test tests/state.test.mjs",
     "test:browser": "node tests/browser.mjs",
     "check": "node --check js/content.js && node --check js/engine.js && node --check js/art.js && node --check js/app.js && node --check server.mjs && git diff --check"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
   }
 }

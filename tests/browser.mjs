@@ -1,4 +1,4 @@
-import {chromium} from '/Users/olli/.openclaw/workspace/projects/lantern-depths/node_modules/playwright/index.mjs';
+import {chromium} from 'playwright';
 import {mkdir,writeFile,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';

@@ -1,6 +1,6 @@
 # Abnahmeprotokoll
 
-Geprüft am **10.09.2026**, ausschließlich im Projekt `caschy-adventure`. Kein Deployment und kein Remote. Die unten genannte Runtime wurde während des gesamten letzten Browserdurchlaufs **nicht verändert**; der Test vergleicht vor und nach dem Lauf ihren SHA-256-Digest.
+Geprüft am **10.09.2026** im Projekt `caschy-adventure`. Die unten genannte Runtime wurde während des gesamten letzten Browserdurchlaufs **nicht verändert**; der Test vergleicht vor und nach dem Lauf ihren SHA-256-Digest. Das Deployment wird nach dem Push separat über die veröffentlichte URL geprüft.
 
 ## Reproduzierbare Ergebnisse
 
@@ -85,4 +85,4 @@ Die visuelle Beurteilung stützt sich auf die dekodierten Screenshots. DOM-, Pix
 - Keine vollständige Screenreader-/WCAG-Zertifizierung. Tastatur- und Fokusverhalten wurde an repräsentativen realen Interaktionen geprüft; zwei gesamte Wege wurden mit Maus bzw. Touch abgeschlossen.
 - SFX-Schalter im Headless-Browser geprüft, keine akustische Qualitätsmessung. Kein Musiktrack vorgesehen.
 - Stilisierte stehende Pixelkarikaturen; keine Laufanimation oder fotorealistische Porträtbehauptung.
-- Kein Publishing, Portal-Embedding, öffentlicher Link oder Remote. Der Testserver wurde nach den Durchläufen beendet. Zum Spielen lokal `npm start` ausführen.
+- Die lokale Funktionsprüfung ist vom Hosting getrennt. GitHub Pages liefert dieselben statischen Dateien aus; Erreichbarkeit und Startszene werden nach dem Deployment zusätzlich an der öffentlichen URL geprüft.
