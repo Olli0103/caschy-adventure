@@ -4,7 +4,7 @@ Geprüft am **11.09.2026** im Projekt `caschy-adventure`. Die unten genannte Run
 
 ## Öffentliche Version
 
-GitHub Pages liefert das Spiel unter [olli0103.github.io/caschy-adventure](https://olli0103.github.io/caschy-adventure/) aus. Ein separater Chromium-Test gegen diese öffentliche URL erhielt HTTP 200, dekodierte 711 Farbwerte aus dem Titel-Canvas, startete das Spiel bis zur Redaktion und registrierte keine JavaScript-Fehler. GitHub meldete den Pages-Build für den veröffentlichten Quellstand als `built`.
+GitHub Pages liefert das Spiel unter [olli0103.github.io/caschy-adventure](https://olli0103.github.io/caschy-adventure/) aus. Ein separater Chromium-Test gegen diese öffentliche URL erhielt HTTP 200, dekodierte 727 Farbwerte aus dem Titel-Canvas, öffnete den Caschy-Dialog und bestätigte dort das 96 × 96-Pixelporträt mit 198 dekodierten Farbwerten. JavaScript-Fehler traten nicht auf; GitHub meldete den Pages-Build des Figurenstands `e88824d` als `built`.
 
 ## Reproduzierbare Ergebnisse
 
