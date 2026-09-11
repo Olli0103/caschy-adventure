@@ -30,7 +30,7 @@ Maschinenlesbarer Browserbericht: [test-results/browser-report.json](test-result
 Runtime-Digest:
 
 ```text
-d8522e73e9518633cd29a770b7f3a150ca81947006402e71824b444f8746ee5d
+39b6353358b47e2bd0f88ac82ad30160caabe365cffee6f3e528664c9fee822d
 ```
 
 Die Hashbildung umfasst der Reihe nach Dateinamen und Inhalt von `index.html`, `style.css`, `js/content.js`, `js/engine.js`, `js/art.js`, `js/app.js`, `server.mjs`. Die einzelnen Artefakthashes stehen in [test-results/artifact-manifest.json](test-results/artifact-manifest.json).
@@ -53,17 +53,17 @@ Die Hashbildung umfasst der Reihe nach Dateinamen und Inhalt von `index.html`, `
 
 ## Tatsächliche Sichtkontrolle des finalen Stands
 
-Alle folgenden PNGs wurden nach dem letzten erfolgreichen Durchlauf als Bilder geöffnet und visuell geprüft. Die aktuelle Runde ergänzt fünf eindeutig unterscheidbare Ganzkörperfiguren und 96 × 96-Pixelporträts nach bereitgestellten Referenzfotos. Die Fotos selbst sind nicht Bestandteil des Builds. Danach wurden alle Screenshots neu erzeugt und erneut geprüft.
+Alle folgenden PNGs wurden nach dem letzten erfolgreichen Durchlauf als Bilder geöffnet und visuell geprüft. In der aktuellen Runde wurden sämtliche 55 Objektbeschreibungen, alle Hauptdialoge, Rätseltexte, Hinweise, Rückmeldungen, die Startseite und beide Enden neu geschrieben. Die längeren, zusammenhängenden Fassungen wurden auf Desktop und Mobil ohne Überdeckung oder abgeschnittenen Text dargestellt. Die Referenzfotos der Figuren bleiben außerhalb des Builds.
 
 | PNG in `test-results/` | Sichtbefund |
 |---|---|
-| `01-title.png` | Titel, 404-Monitor und Caschy mit Glatze/weißem Bart/Brille sichtbar; eigener Stil; Text kollidiert nicht mit Figuren |
+| `01-title.png` | Überarbeitete Einleitung als zusammenhängender Fließtext; Titel, 404-Monitor und Figuren ohne Kollisionen |
 | `02-newsroom.png` | Redaktion, Schal, Notizregal, USB und klare Aktionsleiste; Nummern entsprechen der Objektliste |
 | `portrait-caschy.png` | Glatze, dunkle Brille und weißer Vollbart im großen Porträt; Gespräch und Aktionsbuttons kollidieren nicht |
 | `room-archive.png` | Eigenständige grünliche Archivszene, The Bat!, C64 und 4/5-Kalender sichtbar; Portable-Fach zeigt LOCKED |
 | `16-archive-shelf-after-pickup.png` | Möbel bleibt, entnommenes Portable-Paket und sein Ziel verschwinden; Gegenstand im Inventar vorhanden |
 | `room-workshop.png` | Violette Werkstatt, André, 404-Geist, beschrifteter Lebenslauf und verriegeltes Stiftfach sichtbar |
-| `03-andre-dialogue.png` | Andrés längeres braunes Haar, helle Augen und Bartschatten im großen Porträt; Dialog bleibt lesbar |
+| `03-andre-dialogue.png` | Andrés vollständig neu geschriebener Dialog bleibt neben dem großen Porträt lesbar; Antworten ohne Clipping |
 | `04-inventory-hover.png` | Geerdetes Proton Pack gelb ausgewählt; korrekter Geist-Hover und eindeutige Benutzen-Zeile |
 | `05-workshop-cleared.png` | Geist tatsächlich weg, Bereinigungsvermerk sichtbar, Stift nun frei; keine Rest-Hitbox |
 | `room-lab.png` | Olli und Felix durch Frisur, Brillenform und Bart klar unterscheidbar; EU-Sperre, NO ROUTE und Sensorgitter sichtbar |
@@ -81,7 +81,7 @@ Alle folgenden PNGs wurden nach dem letzten erfolgreichen Durchlauf als Bilder g
 | `11-good-ending.png` | Alle fünf Figuren am Tisch, Kuchen/Bier und klares 200-OK-Ende sichtbar |
 | `12-mobile-title.png` | Titel/Intro umbrechend ohne horizontales Überlaufen, großer Startbutton |
 | `13-mobile-newsroom.png` | Spielszene, beschriftete Touch-Ziele, Inventar und Notizbuch untereinander ohne Überdeckung |
-| `14-mobile-dialogue.png` | Felix-Dialog, lange Hinweise und sechs Inventargegenstände sauber umbrochen; Bedienelemente bleiben erreichbar |
+| `14-mobile-dialogue.png` | Felix' längerer, neu geschriebener Dialog und sechs Inventargegenstände sauber umbrochen; Bedienelemente bleiben erreichbar |
 | `15-mobile-ending.png` | Ende vollständig lesbar, fünfköpfiges Team sichtbar, Fortsetzen-/Neustartbuttons ohne Clipping |
 
 Die visuelle Beurteilung stützt sich auf die dekodierten Screenshots. DOM-, Pixel- und Zustandsprüfungen ergänzen sie, ersetzen sie aber nicht.
