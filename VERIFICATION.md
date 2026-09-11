@@ -1,6 +1,10 @@
 # Abnahmeprotokoll
 
-Geprüft am **10.09.2026** im Projekt `caschy-adventure`. Die unten genannte Runtime wurde während des gesamten letzten Browserdurchlaufs **nicht verändert**; der Test vergleicht vor und nach dem Lauf ihren SHA-256-Digest. Das Deployment wird nach dem Push separat über die veröffentlichte URL geprüft.
+Geprüft am **10.09.2026** im Projekt `caschy-adventure`. Die unten genannte Runtime wurde während des gesamten letzten Browserdurchlaufs **nicht verändert**; der Test vergleicht vor und nach dem Lauf ihren SHA-256-Digest.
+
+## Öffentliche Version
+
+GitHub Pages liefert das Spiel unter [olli0103.github.io/caschy-adventure](https://olli0103.github.io/caschy-adventure/) aus. Ein separater Chromium-Test gegen diese öffentliche URL erhielt HTTP 200, dekodierte 711 Farbwerte aus dem Titel-Canvas, startete das Spiel bis zur Redaktion und registrierte keine JavaScript-Fehler. GitHub meldete den Pages-Build für den veröffentlichten Quellstand als `built`.
 
 ## Reproduzierbare Ergebnisse
 
@@ -85,4 +89,4 @@ Die visuelle Beurteilung stützt sich auf die dekodierten Screenshots. DOM-, Pix
 - Keine vollständige Screenreader-/WCAG-Zertifizierung. Tastatur- und Fokusverhalten wurde an repräsentativen realen Interaktionen geprüft; zwei gesamte Wege wurden mit Maus bzw. Touch abgeschlossen.
 - SFX-Schalter im Headless-Browser geprüft, keine akustische Qualitätsmessung. Kein Musiktrack vorgesehen.
 - Stilisierte stehende Pixelkarikaturen; keine Laufanimation oder fotorealistische Porträtbehauptung.
-- Die lokale Funktionsprüfung ist vom Hosting getrennt. GitHub Pages liefert dieselben statischen Dateien aus; Erreichbarkeit und Startszene werden nach dem Deployment zusätzlich an der öffentlichen URL geprüft.
+- Die lokale Funktionsprüfung ist vom Hosting getrennt. GitHub Pages liefert dieselben statischen Dateien aus; Erreichbarkeit, Titel-Canvas und Spielstart wurden zusätzlich an der öffentlichen URL geprüft.
