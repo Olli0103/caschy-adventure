@@ -43,7 +43,9 @@ Das Nutzerbriefing liefert zusätzlich die gewünschten Rollen und Running Gags.
 - **André Westphal:** Technik, Games, Serien, Medienpädagogik, Schreibambitionen, Interesse an Ghostbusters/Proton Pack. Fiktiv: seine 404-Geistertheorie, Spule, VDE-Witz, der 404-Seiten-Roman.
 - **Felix Frank:** technophiler Schwabe, Lehrer, Smart Home, Technik aus Fernost. Fiktiv: konkret defekte Brücke, Reparaturdialoge und Standby-Pixelzähler. Matter über Thread ist ein vereinfachtes Spielmodell; Matter ist nicht generell auf Thread beschränkt.
 - **Benjamin „Benny“ Mamerow:** Nordlicht, Technikbegeisterung, Bloggen, Find-Hub-Motiv. Fiktiv: Offline-Peiler, Signal-Kalibrierung und Schlüssel in der eigenen Tasche. Das Gerät ist kein Nachbau der tatsächlichen Find-Hub-App.
-- **Caschy:** Glatze, weißer Bart, Brille, schwarzgelbe Kleidung und trockener Ton nach Gestaltungsvorgabe. Kein Code und keine Bilddatei aus `caschy-run` wurden gelesen oder kopiert. Die anderen Figuren sind vereinfachte, rollenkennzeichnende Pixelkarikaturen, keine verifizierten Porträts.
+- **Caschy:** Glatze, weißer Bart, Brille, schwarzgelbe Kleidung und trockener Ton nach Gestaltungsvorgabe. Kein Code und keine Bilddatei aus `caschy-run` wurden gelesen oder kopiert.
+
+Alle fünf Figuren sind eigenständige, detaillierte Pixelkarikaturen nach Referenzfotos, die für dieses Projekt bereitgestellt wurden. Die Fotos selbst werden weder ausgeliefert noch in dieses Repository übernommen; die Zeichnungen beschränken sich auf sichtbare Merkmale wie Frisur, Brille, Bart und Kleidung.
 
 ## Was vollständig erfunden ist
 

@@ -1,6 +1,6 @@
 import {ROOMS,ITEMS,ICONS,HOTSPOT_COUNT,FRAGMENTS} from './content.js';
 import {initialState,restore,dispatch,objects,unlocked,dialog,objective} from './engine.js';
-import {drawScene,drawTitle,drawEnding} from './art.js';
+import {drawScene,drawTitle,drawEnding,drawPortrait} from './art.js';
 const $=id=>document.getElementById(id),SAVE_KEY='caschy-adventure-404-v1';
 let state=initialState(),log=[],verb='look',selected=null,title=true,sound=false,audio=null,storageOK=true,dialogueOrigin=null;
 try{const raw=localStorage.getItem(SAVE_KEY);if(raw){const data=JSON.parse(raw),saved=restore(data.state);if(saved){state=saved;log=Array.isArray(data.log)?data.log.filter(x=>typeof x==='string').slice(0,35):[];}else{$('save-status').textContent='Alter Speicherstand nicht lesbar. Neues Spiel bereit.';storageOK=false;}}}catch{storageOK=false;$('save-status').textContent='Lokaler Speicher nicht verfügbar.';}
@@ -39,7 +39,13 @@ function render(tone='normal'){
 }
 function renderDialogue(){
  $('dialogue').replaceChildren();const d=dialog(state);if(!d)return;
- $('dialogue').append(el('h3',{},d.title),el('p',{},d.text));const choices=el('div',{class:'choices'});
+ const people=['caschy','andre','olli','felix','benny'],character=people.includes(state.pending)?state.pending:null;
+ const heading=el('h3',{},d.title),copy=el('p',{},d.text);
+ if(character){
+  const profile=el('div',{class:'dialogue-profile'}),portrait=el('canvas',{class:'dialogue-portrait',role:'img','aria-label':`Detailliertes Pixelporträt von ${d.title.split(' · ')[0]}`}),text=el('div',{class:'dialogue-copy'});
+  text.append(heading,copy);profile.append(portrait,text);$('dialogue').append(profile);drawPortrait(portrait,character);
+ }else $('dialogue').append(heading,copy);
+ const choices=el('div',{class:'choices'});
  if(d.input){const form=el('form'),label=el('label',{for:'team-code'},'Teamcode (8 Ziffern)'),input=el('input',{id:'team-code',name:'team-code',inputmode:'numeric',autocomplete:'off',maxlength:'12',placeholder:'·· ·· ·· ··','data-focus':'team-code'}),submit=el('button',{type:'submit','data-focus':'team-submit'},'Code prüfen');form.append(label,input,submit);form.addEventListener('submit',e=>{e.preventDefault();run({type:'choose',value:input.value});});choices.append(form);}
  else d.options.forEach(o=>{const b=el('button',{'data-choice':o.id,'data-focus':'choice-'+o.id},o.label);b.addEventListener('click',()=>run({type:'choose',id:o.id}));choices.append(b);});
  const close=el('button',{class:'close-dialogue','data-focus':'close-dialogue'},'Gespräch / Rätsel schließen');close.addEventListener('click',()=>run({type:'close'}));$('dialogue').append(choices,close);

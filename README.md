@@ -23,6 +23,7 @@ Das Spiel läuft vollständig im Browser. Es gibt kein Backend, keine Anmeldung 
 ## Was drinsteckt
 
 - 7 handgezeichnete Pixelräume
+- 5 individuelle Figuren mit großformatigen Dialogporträts
 - 9 Rätselstationen mit mehreren Lösungswegen
 - 55 anklickbare Objekte und Easter Eggs
 - etwa 20 bis 35 Minuten Spielzeit beim ersten Durchlauf
@@ -84,7 +85,7 @@ npx playwright install chromium
 npm run test:browser
 ```
 
-Der aktuelle Stand besteht 15 Logiktests und 69 Browserprüfungen. Die Browserprüfung spielt einen vollständigen Desktop-Weg und einen unabhängigen Touch-Weg durch. Sie prüft außerdem Save und Restore, Tastatursteuerung, Hinweise, beide Enden und alle 55 Entdeckungen.
+Der aktuelle Stand besteht 15 Logiktests und 74 Browserprüfungen. Die Browserprüfung spielt einen vollständigen Desktop-Weg und einen unabhängigen Touch-Weg durch. Sie prüft außerdem Save und Restore, Tastatursteuerung, Hinweise, beide Enden und alle 55 Entdeckungen.
 
 Die vollständigen Ergebnisse stehen in [VERIFICATION.md](VERIFICATION.md). Screenshots und der maschinenlesbare Bericht liegen unter [`test-results/`](test-results/).
 

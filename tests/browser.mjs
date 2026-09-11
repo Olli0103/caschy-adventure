@@ -18,6 +18,7 @@ context.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));
 context.on('request',r=>{if(!r.url().startsWith(url)&&!r.url().startsWith('data:'))external.push(r.url());});
 const page=context.pages()[0]||await context.newPage();page.on('pageerror',e=>errors.push(e.message));
 const screenshot=async(name,p=page)=>{await p.screenshot({path:path.join(root,'test-results',name+'.png'),fullPage:true});screenshots.push(name+'.png');};
+async function portraitProof(p,name){const canvas=p.locator('.dialogue-portrait');assert.equal(await canvas.count(),1);assert.match(await canvas.getAttribute('aria-label'),new RegExp(name,'i'));const proof=await canvas.evaluate(c=>{const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data,colors=new Set();for(let i=0;i<d.length;i+=4)colors.add(`${d[i]},${d[i+1]},${d[i+2]}`);return {width:c.width,height:c.height,colors:colors.size};});assert.deepEqual([proof.width,proof.height],[96,96]);assert(proof.colors>12);checks++;}
 async function command(p,step,mobile=false){const [type,a,b]=step;const click=async loc=>mobile?loc.tap():loc.click();
  if(type==='start'){await click(p.locator('#start'));return;}
  if(type==='move'){await click(p.locator(`[data-room="${a}"]`));return;}
@@ -33,12 +34,12 @@ try{
  let reloaded=false;
  for(let i=0;i<route.length;i++){
   const step=route[i];await command(page,step);
-  if(step[0]==='start')await screenshot('02-newsroom');
+  if(step[0]==='start'){await screenshot('02-newsroom');await command(page,['act','talk','caschy']);await portraitProof(page,'Caschy');await screenshot('portrait-caschy');await page.locator('.close-dialogue').click();}
   if(step[0]==='act'&&step[1]==='take'&&step[2]==='firefox')await screenshot('16-archive-shelf-after-pickup');
   if(step[0]==='choose'&&step[1]==='offline')await screenshot('17-sensor-unlocked');
   if(step[0]==='choose'&&step[1]==='b2'){assert.equal(await page.evaluate(()=>document.activeElement?.dataset.focus),'choice-wp');checks++;}
   if(step[0]==='move'&&['archive','workshop','lab','quay','server'].includes(step[1]))await screenshot('room-'+step[1]);
-  if(step[0]==='act'&&step[2]==='andre')await screenshot('03-andre-dialogue');
+  if(step[0]==='act'&&step[1]==='talk'&&['andre','olli','felix','benny'].includes(step[2])){const names={andre:'André',olli:'Olli',felix:'Felix',benny:'Benny'};await portraitProof(page,names[step[2]]);await screenshot(step[2]==='andre'?'03-andre-dialogue':`portrait-${step[2]}`);}
   if(step[0]==='combine'&&step[1]==='coil'){await page.locator('[data-item="pack"]').click();await page.locator('[data-hotspot="ghost"]').hover();await screenshot('04-inventory-hover');await page.locator('#cancel-item').click();}
   if(step[0]==='use'&&step[1]==='pack'){assert.equal(await page.locator('[data-hotspot="ghost"]').count(),0);checks++;await screenshot('05-workshop-cleared');}
   if(step[0]==='use'&&step[1]==='diagnostic'){
